@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css'
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
-
+import './ChatBot.css'
 
 const API_KEY="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"
 
@@ -12,11 +12,11 @@ function ChatBot() {
 
   const [messages, setMessages] = useState([
     {
-      message:"Hello, I am Chicken 69, I will help you to diagnose your chicken disease. ",
+      message:"Hello, I am Chicken 69, I will help you to diagnose your Plant/Chicken disease. ",
       sender:"ChatGPT"
     }
   ])
-
+   
   const handleSend= async (message)=>{
     const newMessage={
       message:message,
@@ -81,7 +81,7 @@ function ChatBot() {
 
   return (
     <div className="App">
-      <div className="chatbot flex flex-col justify-between  w-[500px] border-[Red] h-[600px] border-solid border-[2px] m-3 bg-[white]">
+      <div className="chatbot flex flex-col justify-between  lg:w-[500px]  lg:h-[600px] border-solid border-[2px] lg:m-3 m-5  " >
         <MainContainer>
           <ChatContainer>
             <MessageList
