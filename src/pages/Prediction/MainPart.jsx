@@ -51,7 +51,7 @@ const MainPart = () => {
           <div className='flex'>
                 <label htmlFor="photo" className="cursor-pointer">
                     <div className='mt-3 text-white bg-[#6469ff] hover:text-[#6469ff] hover:bg-blue-200 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'>Upload</div>
-                    <input type="file" accept="image/*" name="photo" id="photo" className="sr-only" onChange={handleUpload} />
+                    <input type="file" accept="image/*" capture='environment' name="photo" id="photo" className="sr-only" onChange={handleUpload} />
                 </label>
                 <button className='m-3 text-white bg-[#6469ff] hover:text-[#6469ff] hover:bg-blue-200 font-medium rounded-md text-sm w-full sm:w-auto px-5 py-2.5 text-center'  type='submit'>Predict</button>
             </div>
