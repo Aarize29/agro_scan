@@ -3,11 +3,16 @@ import '@chatscope/chat-ui-kit-styles/dist/default/styles.min.css'
 import { MainContainer, ChatContainer, MessageList, Message, MessageInput, TypingIndicator } from '@chatscope/chat-ui-kit-react'
 import './ChatBot.css'
 
+import { collection, getDocs } from "firebase/firestore"; 
+import db from '/src/firebase'
 const API_KEY="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"
 
 
-function ChatBot() {
+const ChatBot=  ()=> {
 
+
+  
+  
   const [typing,setTyping]=useState(false)
 
   const [messages, setMessages] = useState([

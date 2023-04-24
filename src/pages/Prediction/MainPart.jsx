@@ -5,6 +5,9 @@ import "@tensorflow/tfjs-backend-webgl";
 import "@tensorflow/tfjs-backend-cpu";
 import NavBar from "/src/components/NavBar/Navbar"
 import * as tf from '@tensorflow/tfjs';
+import db from '/src/firebase'
+import { collection, addDoc } from "firebase/firestore"; 
+
 
 const MainPart = () => {
   const [imageUpload, setImageUpload] = useState(null)
@@ -35,9 +38,16 @@ const MainPart = () => {
     const handleChange=(e)=>{
       setForm({...form,[e.target.name]:e.target.value})
   }
-  const handlPrediction=(e)=>{
+
+  //Most Important Function
+  const handlPrediction= async(e)=>{
     e.preventDefault()
-    alert("Prediction Started")
+    
+    const data=await addDoc(collection(db, "disease"), {
+      name:predictedDisease
+    });
+
+    alert("Prediction added to database")
   }
   
   return (
