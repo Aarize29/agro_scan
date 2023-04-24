@@ -1,0 +1,15 @@
+.dark-theme{
+  --bg: #2a4d65;
+  --textcolor: #fff;
+  --body:#979797;
+}
+.light-theme{
+  --bg: #fff;
+  --textcolor: #0c4a6e;
+  --body:#fff;
+  
+}
+
+body{
+  background-color: var(--body);
+}
